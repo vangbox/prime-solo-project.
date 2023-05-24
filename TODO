@@ -1,0 +1,33 @@
+1. Username/password Page
+    - input - username
+    - input - password
+    - button - Enter
+        - set up the auth
+        - server password
+        - database / hash & salt
+        - dispatch post to log into the Character Creation
+2. Create New Account Page
+    - input - username
+    - input - password
+    - button - create account
+        - dispatch post to send it to the data base
+        - have it auto log into the Character Creation page with username and password
+3. Character Creation Page
+    - Radio - 4 choice, can only choose 1 (Hair)
+    - Radio - 4 choice, can only choose 1 (Body)
+    - Radio - 4 choice, can only choose 1 (Feet)
+    - Radio - 4 choice, can only choose 1 (Feet)
+        - create database for the character creation
+        - GET the img pull from the database to show the 4 selection
+        - the radio button is auto selected on 1 of them when hit this screen
+        - Img of the combination will be shown on the bottom half of the screen (PUT - currently changing img)
+    - button - 'Enter' 
+        - dispatch a post to save the img of the character in server or state?
+        - will run the to the Equipment Page
+4. Equipment Page
+    - (GET) will show img in the middle of screen
+    - Equipment 1 - drag and drop ? / click to select ? starting weapon
+    - Equipment 2 - drag and drop ? / click to select ? starting armor
+    - Equipment 3 - drag and drop ? / click to select ? starting pants
+    - Equipment 4 - drag and drop ? / click to select ? starting pants/feet
+    - Devil Powers : will be a list of powers (GET when received power), (POST when get card in a level)

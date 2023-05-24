@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 // This is one of our simplest components
 // It doesn't have local state
@@ -9,6 +10,7 @@ function InfoPage() {
   return (
     <div className="container">
       <p>Info Page</p>
+      
     </div>
   );
 }

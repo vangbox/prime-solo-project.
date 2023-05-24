@@ -19,6 +19,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import CharacterCreation from '../CharacterCreation/CharacterCreation';
 
 import './App.css';
 
@@ -59,6 +60,13 @@ function App() {
           >
             <UserPage />
           </ProtectedRoute>
+
+            <ProtectedRoute 
+            exact 
+            path ="/characterCreation"
+            >
+              <CharacterCreation />
+            </ProtectedRoute>
 
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
@@ -118,6 +126,7 @@ function App() {
         <Footer />
       </div>
     </Router>
+    
   );
 }
 

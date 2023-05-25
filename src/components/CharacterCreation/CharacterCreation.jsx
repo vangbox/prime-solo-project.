@@ -8,9 +8,12 @@ import { useHistory } from "react-router-dom";
 
 function CharacterCreation(){
 
-    // useEffect(() => {
-    //     dispatch({ type: 'FETCH_CHARACTER_CREATION' });
-    // }, []);
+    const dispatch = useDispatch();
+    const characterCreation = useSelector(store => store.characterCreation);
+
+    useEffect(() => {
+        dispatch ({ type: 'FETCH_CHARACTER_CREATION' });
+    }, []);
     
 
     return (
@@ -18,7 +21,18 @@ function CharacterCreation(){
 
         <div>
           <p>Character Creation Page</p>
-        </div>
+        
+        <section>
+        {
+        characterCreation.map(characterCreation => {
+            return (
+                <div key={characterCreation.id}>
+                    <li>{characterCreation.avatar_hair}</li>                    
+                </div>     
+            );
+        })}
+    </section>
+    </div>
       );
 }
 

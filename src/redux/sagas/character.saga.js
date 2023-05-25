@@ -8,15 +8,24 @@ function* fetchCharacterCreation() {
       const characterCreation = yield axios.get('/api/character')
       console.log('fetch characterCreation', characterCreation);
 
-      yield put({ type: 'SET_CHARACTER_CREATION', payload: characterCreation.data });
+      yield put({ type: 'GET_CHARACTER_CREATION', payload: characterCreation.data });
 
     } catch (error) {
-      console.log('fetchCharacterCreation failed!!', error);
+      console.log('fetchCharacterCreation axios GET failed!!', error);
     }
   }
   
+  function* createCharacter(){
+    try{
+      const createCharacter = yield axios.post('/api/character')
+      yield put({ type: 'GET_CHARACTER_CREATION' });
+    } catch (error) {
+      console.log('createCharacter axios POST failed!!', error);
+    }
+  }
   function* characters() {
     yield takeLatest('FETCH_CHARACTER_CREATION', fetchCharacterCreation);
+    yield takeLatest('CREATE_CHARACTER', createCharacter)
   }
   
   export default characters;

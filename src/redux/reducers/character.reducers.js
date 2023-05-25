@@ -1,6 +1,6 @@
 const characterCreation = (state = [], action) => {
     switch (action.type) {
-      case 'SET_CHARACTER_CREATION':
+      case 'GET_CHARACTER_CREATION':
         return action.payload;
       default:
         return state;

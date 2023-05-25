@@ -10,6 +10,8 @@ function UserPage() {
     <div className="container">
       <h2>Welcome, {user.username}!</h2>
       <p>Your ID is: {user.id}</p>
+
+
       {/* button takes you to character creation page */}
       <h2>Press Next for character creation!</h2>
       <Link to="/characterCreation"><button>Next</button></Link>

@@ -26,6 +26,24 @@ router.get('/', (req, res) => {
  */
 router.post('/', (req, res) => {
   // POST route code here
+  
+  const sqlText = `
+  INSERT INTO character_creation(avatar_name, avatar_hair, avatar_body, avatar_pant, avatar_feet)
+	VALUES ($1, $2, $3, $4, $5);
+  `
+  
+  const sqlValue = req.body
+
+console.log('what is req.body', req.body);
+  pool
+    .query(sqlText, sqlValue)
+    .then(() => res.sendStatus(201))
+    .catch((err) => {
+      console.log('Router Post FAIL!: ', err);
+      res.sendStatus(500);
+    });
 });
+
+
 
 module.exports = router;

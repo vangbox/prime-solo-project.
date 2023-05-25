@@ -59,9 +59,10 @@ function CharacterCreation(){
         })}
         </section>
 
-        <form>
+        <form onSubmit={handleSubmit}>
             
             <div className="input">
+                <h3>Enter Your Character Name</h3>
                 <input 
                     placeholder="name" 
                     value={avatarName}
@@ -69,7 +70,7 @@ function CharacterCreation(){
                 />
             </div>
 
-            <label for='hair'>Character Hair Color</label>    
+            <label>Character Hair Color</label>    
             <div className="radio-hair">
                 <input 
                     type='radio'
@@ -107,7 +108,7 @@ function CharacterCreation(){
                 
             </div>
 
-            <label for='hair'>Character Body Color</label>    
+            <label>Character Body Color</label>    
             <div className="radio-body">
                 <input 
                     type='radio'
@@ -144,7 +145,7 @@ function CharacterCreation(){
                 />
             </div>
 
-            <label for='hair'>Character Pants Color</label>    
+            <label>Character Pants Color</label>    
             <div className="radio-body">
                 <input 
                     type='radio'
@@ -181,7 +182,7 @@ function CharacterCreation(){
                 />
             </div>
 
-            <label for='hair'>Character Feet Color</label>    
+            <label>Character Feet Color</label>    
             <div className="radio-body">
                 <input 
                     type='radio'

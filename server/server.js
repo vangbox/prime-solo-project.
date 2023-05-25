@@ -8,7 +8,7 @@ const sessionMiddleware = require('./modules/session-middleware');
 const passport = require('./strategies/user.strategy');
 // Route includes
 const userRouter = require('./routes/user.router');
-const characterRouter = require('./routes/character.js')
+const characterRouter = require('./routes/character.router.js')
 
 // Body parser middleware
 app.use(bodyParser.json());

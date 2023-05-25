@@ -2,39 +2,41 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-/**
- * GET route template
- */
+//GET Router
 router.get('/', (req, res) => {
-  // GET route code here
   const query = `SELECT * FROM character_creation;`;
-  console.log('got it from db', query);
+  
   pool.query(query)
     .then( result => {
       res.send(result.rows);
       
     })
     .catch(err => {
-      console.log('ERROR: Get all movies', err);
+      console.log('ERROR: GET character router ', err);
       res.sendStatus(500)
     })
 });
 
 
-/**
- * POST route template
- */
+// POST route code here
 router.post('/', (req, res) => {
-  // POST route code here
   
-  const sqlText = `
-  INSERT INTO character_creation(avatar_name, avatar_hair, avatar_body, avatar_pant, avatar_feet)
-	VALUES ($1, $2, $3, $4, $5);
-  `
+  console.log('got to the router.post !!!!!!!!!!');
   
-  const sqlValue = req.body
+  const name = req.body.name;
+  const hair = req.body.hair;
+  const body = req.body.body;
+  const pant = req.body.pant;
+  const feet = req.body.feet;
+  // console.log('what is req.body.name,hair', name,hair); - it works!
 
-console.log('what is req.body', req.body);
+  const sqlValue = [name, hair, body, pant, feet];
+  const sqlText = `
+  INSERT INTO 
+    character_creation(avatar_name, avatar_hair, avatar_body, avatar_pant, avatar_feet)
+	    VALUES ($1, $2, $3, $4, $5);
+  `;
+
   pool
     .query(sqlText, sqlValue)
     .then(() => res.sendStatus(201))

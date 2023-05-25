@@ -15,17 +15,25 @@ function* fetchCharacterCreation() {
     }
   }
   
-  function* createCharacter(){
+  function* postCreateCharacter(action){
+    console.log('did it get here to postCreateCharacter', action);
     try{
-      const createCharacter = yield axios.post('/api/character')
-      yield put({ type: 'GET_CHARACTER_CREATION' });
+      const createCharacter = yield axios({
+        method: 'POST',
+        url: '/api/character',
+        data: action.payload
+    })
+      console.log('create character', createCharacter);
+      yield put({ type: 'FETCH_CHARACTER_CREATION' });
     } catch (error) {
       console.log('createCharacter axios POST failed!!', error);
     }
   }
+
+
   function* characters() {
     yield takeLatest('FETCH_CHARACTER_CREATION', fetchCharacterCreation);
-    yield takeLatest('CREATE_CHARACTER', createCharacter)
+    yield takeLatest('CREATE_CHARACTER', postCreateCharacter)
   }
   
   export default characters;

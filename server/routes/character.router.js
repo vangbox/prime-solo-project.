@@ -89,20 +89,21 @@ router.put('/:id', (req, res) => {
   UPDATE "character_creation"
 	  SET 
       "avatar_name" = $1,
-      "avatar_hair" = $2
-		    WHERE "id" = $3;
+      "avatar_hair" = $2,
+      "avatar_body" = $3,
+      "avatar_pant" = $4,
+      "avatar_feet" = $5
+		    WHERE "id" = $6;
     `;
       
-      // "avatar_body" = $3,
-      // "avatar_pant" = $4,
-      // "avatar_feet" = $5,
+      
   // need to add userId, characterId
   const sqlValues = [
     newCharacterName,
     newCharacterHair,
-    // newCharacterBody,
-    // newCharacterPant,
-    // newCharcterFeet,
+    newCharacterBody,
+    newCharacterPant,
+    newCharcterFeet,
     characterId];
 
   pool.query(sqlQuery, sqlValues)

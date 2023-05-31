@@ -74,10 +74,12 @@ router.post('/', (req, res) => {
 
 //PUT route
 router.put('/:id', (req, res) => {
-  const newCharacterName = req.body.name;
+  const newCharacterName = req.body.avatar_name;
   const characterId = req.params.id;
   // const userId = req.user.id;
 
+  // console.log(req.body.avatar_name);
+  
   //need to add, AND "user_id=$3, WHERE "id" = $2
   const sqlQuery = `
   UPDATE "character_creation"

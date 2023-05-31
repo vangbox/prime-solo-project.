@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {Link} from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 
+import DeleteConfirm from './DeleteConfirm';
 
 function CharacterCreation(){
 
@@ -46,6 +47,7 @@ function CharacterCreation(){
                         {/* onclick for edit and delete button */}
                         <button onClick={() => {handleEdit(characterCreation)}}>Edit</button>                 
                         <button onClick={() => {deleteButton(characterCreation)}}>Delete</button>  
+                        {/* <button onClick={DeleteConfirm}>Delete</button> */}
                     </div> 
                        
                 );

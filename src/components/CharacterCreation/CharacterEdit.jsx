@@ -34,6 +34,7 @@ function CharacterEdit(){
             payload: characterEdit
         })
         history.push('/characterCreation')
+        // console.log('characterEdit', characterEdit);
     }
     // console.log('whats is characterEdit', characterEdit);
     return(

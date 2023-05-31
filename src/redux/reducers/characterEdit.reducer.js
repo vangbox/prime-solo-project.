@@ -4,7 +4,7 @@ const characterEdit = (state = {}, action) => {
         return action.payload;
       default:
         return state;
-      case 'UPDATE_CHARACTER_SKIN':
+      case 'UPDATE_CHARACTER':
         return {...state, avatar_name: action.payload}
     }
 };

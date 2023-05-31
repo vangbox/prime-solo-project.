@@ -3,9 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import {Link} from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 
-//import CharacterItem to map
-import CharacterItem from './CharacterItem';
-import CharacterEdit from './CharacterEdit';
 
 function CharacterCreation(){
 

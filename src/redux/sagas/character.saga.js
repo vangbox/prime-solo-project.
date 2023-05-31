@@ -6,7 +6,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 function* fetchCharacterCreation() {
     try {
       const characterCreation = yield axios.get('/api/character')
-      console.log('fetch characterCreation', characterCreation);
+      // console.log('fetch characterCreation', characterCreation);
 
       yield put({ type: 'GET_CHARACTER_CREATION', payload: characterCreation.data });
 
@@ -22,7 +22,7 @@ function* postCreateCharacter(action){
       url: '/api/character',
       data: action.payload
   })
-    console.log('create character', createCharacter);
+    // console.log('create character', createCharacter);
     yield put({ type: 'FETCH_CHARACTER_CREATION' });
   } catch (error) {
     console.log('createCharacter axios POST failed!!', error);
@@ -48,12 +48,32 @@ function* fetchCharacterEdit(action){
     console.log('fetchCharacterEdit axios GET failed!!', error);
   }
 }
-  
+
+function* finalCharacterEdit(action){
+
+  try {
+
+    const finalEdit = action.payload;
+
+    const response = yield axios({
+      method: 'PUT',
+      url: `/api/character/${finalEdit.id}`,
+      data: finalEdit
+    })
+    
+    yield put({
+      type: 'FETCH_CHARACTER_CREATION'
+    })
+  } catch (error) {
+    console.log('finalizeCharacterEdit axios PUT failed!!', error);
+  }
+}
 
   function* characters() {
     yield takeLatest('FETCH_CHARACTER_CREATION', fetchCharacterCreation);
     yield takeLatest('CREATE_CHARACTER', postCreateCharacter)
     yield takeLatest('FETCH_CHARACTER_EDIT', fetchCharacterEdit)
+    yield takeLatest('FINAL_CHARACTER_EDIT', finalCharacterEdit)
   }
   
   export default characters;

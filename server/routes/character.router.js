@@ -63,8 +63,8 @@ router.post('/', (req, res) => {
 	    VALUES ($1, $2, $3, $4, $5);
   `;
 
-  pool
-    .query(sqlText, sqlValue)
+  
+  pool.query(sqlText, sqlValue)
     .then(() => res.sendStatus(201))
     .catch((err) => {
       console.log('Router Post FAIL!: ', err);
@@ -72,7 +72,30 @@ router.post('/', (req, res) => {
     });
 });
 
+//PUT route
+router.put('/:id', (req, res) => {
+  const newCharacterName = req.body.name;
+  const characterId = req.params.id;
+  // const userId = req.user.id;
 
+  //need to add, AND "user_id=$3, WHERE "id" = $2
+  const sqlQuery = `
+  UPDATE "character_creation"
+	  SET "avatar_name" = $1
+		  WHERE "id" = $2;
+    `
+  // need to add userId, characterId
+  const sqlValues = [newCharacterName, characterId];
+
+  pool.query(sqlQuery, sqlValues)
+  .then((dbRes) =>{ 
+    res.sendStatus(200)
+  })
+  .catch((err) => {
+    console.log('Router PUT FAIL!: ', err);
+    res.sendStatus(500);
+  });
+})
 
 
 module.exports = router;

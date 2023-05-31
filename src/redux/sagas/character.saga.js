@@ -15,24 +15,45 @@ function* fetchCharacterCreation() {
     }
   }
   
-  function* postCreateCharacter(action){
-    try{
-      const createCharacter = yield axios({
-        method: 'POST',
-        url: '/api/character',
-        data: action.payload
-    })
-      console.log('create character', createCharacter);
-      yield put({ type: 'FETCH_CHARACTER_CREATION' });
-    } catch (error) {
-      console.log('createCharacter axios POST failed!!', error);
-    }
+function* postCreateCharacter(action){
+  try{
+    const createCharacter = yield axios({
+      method: 'POST',
+      url: '/api/character',
+      data: action.payload
+  })
+    console.log('create character', createCharacter);
+    yield put({ type: 'FETCH_CHARACTER_CREATION' });
+  } catch (error) {
+    console.log('createCharacter axios POST failed!!', error);
   }
+}
 
+function* fetchCharacterEdit(action){
+  try {
+    const characterId = action.payload;
+    // console.log('what is id', characterId);
+
+    const response = yield axios.get(`/api/character/${characterId}`)
+    // console.log('fetch characterEdit', characterId.data);
+    const characterEdit = response.data;
+    // console.log('what is response.data', characterEdit);
+
+    yield put({ 
+      type: 'SET_CHARACTER_EDIT', 
+      payload: characterEdit 
+    });
+
+  } catch (error) {
+    console.log('fetchCharacterEdit axios GET failed!!', error);
+  }
+}
+  
 
   function* characters() {
     yield takeLatest('FETCH_CHARACTER_CREATION', fetchCharacterCreation);
     yield takeLatest('CREATE_CHARACTER', postCreateCharacter)
+    yield takeLatest('FETCH_CHARACTER_EDIT', fetchCharacterEdit)
   }
   
   export default characters;

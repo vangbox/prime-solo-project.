@@ -5,7 +5,8 @@ const characterCreation = (state = [], action) => {
       default:
         return state;
     }
-  };
+};
+
   
  
   export default characterCreation;

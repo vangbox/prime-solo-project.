@@ -17,7 +17,33 @@ router.get('/', (req, res) => {
     })
 });
 
+// GET for character edit page
+router.get('/:id', (req, res) => {
 
+  const characterId = req.params.id;
+  // const userId = req.user.id;
+
+  //Need to add this at the bottom, AND "user_id" = $2
+  const sqlQuery = 
+  `SELECT * FROM character_creation
+      WHERE "id" = $1
+      `;
+  
+  // need to add userID into table
+  const sqlValues = [characterId];
+
+  pool.query(sqlQuery, sqlValues)
+    .then( result => {
+      res.send(result.rows[0]);
+      
+    })
+    .catch(err => {
+      console.log('ERROR: GET EDIT character router ', err);
+      res.sendStatus(500)
+    })
+});
+
+  
 // POST route code here
 router.post('/', (req, res) => {
   
@@ -45,6 +71,7 @@ router.post('/', (req, res) => {
       res.sendStatus(500);
     });
 });
+
 
 
 

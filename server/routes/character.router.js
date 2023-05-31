@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 // POST route code here
 router.post('/', (req, res) => {
   
-  console.log('got to the router.post !!!!!!!!!!');
+  // console.log('got to the router.post !!!!!!!!!!');
   
   const name = req.body.name;
   const hair = req.body.hair;

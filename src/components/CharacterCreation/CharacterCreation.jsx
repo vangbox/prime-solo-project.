@@ -5,15 +5,27 @@ import { useHistory } from "react-router-dom";
 
 //import CharacterItem to map
 import CharacterItem from './CharacterItem';
-
+import CharacterEdit from './CharacterEdit';
 
 function CharacterCreation(){
 
-    
+    const history = useHistory();
     const dispatch = useDispatch();
     //redux store to hold the character created
     const characterCreation = useSelector(store => store.characterCreation);
-    
+    //hadle edit button
+    const handleEdit = (characterCreation) => {
+        // console.log('test id nowwwww' ,characterCreation.id);
+        history.push(`character/edit/${characterCreation.id}`)
+    }
+    //delete button
+    const deleteButton = (characterCreation) => {
+
+        dispatch({ 
+            type: 'DELETE_CHARACTER',
+            payload: characterCreation.id
+          })
+    }
     //useffect to fetch the character that has been created
     useEffect(() => {
         dispatch ({ type: 'FETCH_CHARACTER_CREATION' });
@@ -34,8 +46,9 @@ function CharacterCreation(){
                         <li>{characterCreation.avatar_body}</li>
                         <li>{characterCreation.avatar_pant}</li>
                         <li>{characterCreation.avatar_feet}</li>
-                        <button>Edit</button>
-                        <button>Delete</button>                   
+                        {/* onclick for edit and delete button */}
+                        <button onClick={() => {handleEdit(characterCreation)}}>Edit</button>                 
+                        <button onClick={() => {deleteButton(characterCreation)}}>Delete</button>  
                     </div> 
                        
                 );

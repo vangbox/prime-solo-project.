@@ -16,7 +16,6 @@ function* fetchCharacterCreation() {
   }
   
   function* postCreateCharacter(action){
-    console.log('did it get here to postCreateCharacter', action);
     try{
       const createCharacter = yield axios({
         method: 'POST',

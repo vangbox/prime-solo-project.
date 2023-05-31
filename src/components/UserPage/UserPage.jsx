@@ -3,7 +3,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector} from 'react-redux';
 import {Link} from 'react-router-dom'
 //import components
-import CharacterCreation from '../CharacterCreation/CharacterCreation';
+
 import CharacterItem from '../CharacterCreation/CharacterItem';
 
 function UserPage() {
@@ -19,7 +19,7 @@ function UserPage() {
       {/* button takes you to character creation page */}
       
       <CharacterItem />
-      <CharacterCreation />
+      
       
       <LogOutButton className="btn" />
     </div>

@@ -6,7 +6,8 @@ import { useHistory } from "react-router-dom";
 
 
 function CharacterItem(){
-
+    
+    const history = useHistory();
     const dispatch = useDispatch();
     // local state to hold in the selected choice to create the avatar
     const [avatarName, setAvatarName] = useState('');
@@ -30,7 +31,7 @@ function CharacterItem(){
             type: 'CREATE_CHARACTER',
             payload: characterInput
         })
-
+        history.push('/characterCreation')
     }
     
     return (
@@ -193,14 +194,10 @@ function CharacterItem(){
                     checked={avatarFeet === 'black'}
                     onChange={(event) => {setAvatarFeet(event.target.value)}}
                 />
-                <button >Edit</button>
             </div>
-            <button type='submit'>NEXT</button>
             
+            <button type='submit'>NEXT</button>
         </form>
-
-
-
         </div>
       );
 }

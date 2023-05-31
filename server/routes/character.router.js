@@ -75,19 +75,35 @@ router.post('/', (req, res) => {
 //PUT route
 router.put('/:id', (req, res) => {
   const newCharacterName = req.body.avatar_name;
+  const newCharacterHair = req.body.avatar_hair;
+  const newCharacterBody = req.body.avatar_body;
+  const newCharacterPant = req.body.avatar_pant;
+  const newCharcterFeet = req.body.avatar_feet;
   const characterId = req.params.id;
   // const userId = req.user.id;
 
-  // console.log(req.body.avatar_name);
-  
+  console.log('what is this***********', req.body);
+
   //need to add, AND "user_id=$3, WHERE "id" = $2
   const sqlQuery = `
   UPDATE "character_creation"
-	  SET "avatar_name" = $1
-		  WHERE "id" = $2;
+	  SET 
+      "avatar_name" = $1,
+      "avatar_hair" = $2
+		    WHERE "id" = $3;
     `;
+      
+      // "avatar_body" = $3,
+      // "avatar_pant" = $4,
+      // "avatar_feet" = $5,
   // need to add userId, characterId
-  const sqlValues = [newCharacterName, characterId];
+  const sqlValues = [
+    newCharacterName,
+    newCharacterHair,
+    // newCharacterBody,
+    // newCharacterPant,
+    // newCharcterFeet,
+    characterId];
 
   pool.query(sqlQuery, sqlValues)
   .then((dbRes) =>{ 

@@ -1,5 +1,5 @@
 import { useParams, useHistory } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 function CharacterEdit(){
@@ -7,28 +7,44 @@ function CharacterEdit(){
     const params = useParams();
     const dispatch = useDispatch();
     const history = useHistory();
+    //local state for radio buttons
+    const [avatarName, setAvatarName] = useState('');
+    const [avatarHair, setAvatarHair] = useState('');
+    const [avatarBody, setAvatarBody] = useState('');
+    const [avatarPant, setAvatarPant] = useState('');
+    const [avatarFeet, setAvatarFeet] = useState('');
 
     const characterEdit = useSelector(store => store.characterEdit)
 
     useEffect(() => {
         const characterId = params.id;
         // console.log('characterId', characterId);
-
+        console.log('what is inside characterEdit', characterEdit);
+        console.log('what is inside characterEdit.avatar_hair', characterEdit.avatar_hair);
+        console.log('what is inside characterEdit.avatar_body', characterEdit.avatar_body);
+        console.log('what is inside characterEdit.avatar_pant', characterEdit.avatar_pant);
+        console.log('what is inside characterEdit.avatar_feet', characterEdit.avatar_feet);
         dispatch({
             type: 'FETCH_CHARACTER_EDIT', 
             payload: characterId
         });
     }, []);
 
-    const handleUpdate = (event) => {
+    const handleUpdate = (event, message) => {
 
         dispatch({
-            type: 'UPDATE_CHARACTER',
+            type: message,
             payload: event.target.value
         })
     }
 
-    const finalEditBtn = () => {
+    const finalEditBtn = (event) => {
+        event.preventDefault
+        
+        // console.log('what is inside characterEdit', characterEdit);
+        // console.log('what is inside characterEdit.avatar_hair', characterEdit.avatar_hair);
+        
+
         dispatch({
             type: 'FINAL_CHARACTER_EDIT',
             payload: characterEdit
@@ -42,11 +58,162 @@ function CharacterEdit(){
         <h2>Edit Character</h2>
             <section>
                 <form onSubmit={finalEditBtn}>
-                    <input 
-                        type="text"
-                        value = {characterEdit.avatar_name}
-                        onChange={handleUpdate}
-                    />
+                    <div>
+                        <input 
+                            type="text"
+                            value = {characterEdit.avatar_name}
+                            onChange={(event) => {handleUpdate(event, 'CHANGE_NAME')}}
+                        />
+                    </div>
+                    <label>Character Hair Color</label>    
+                    <div className="radio-hair">
+                        <input 
+                            type='radio'
+                            name='hair'
+                            value='red'
+                            // checked={avatarHair === 'red'}
+                            checked={characterEdit.avatar_hair === 'red'}
+                            onChange={(event) => {handleUpdate(event, 'CHANGE_HAIR')}}
+                            // onChange={handleUpdate}
+                        />
+                        
+                        <input 
+                            type='radio'
+                            name='hair'
+                            value='blue'
+                            // checked={avatarHair === 'blue'}
+                            checked={characterEdit.avatar_hair === 'blue'}
+                            onChange={(event) => {handleUpdate(event, 'CHANGE_HAIR')}}
+                            // onChange={handleUpdate}
+                        />
+                        <input 
+                            type='radio'
+                            name='hair'
+                            value='orange'
+                            // checked={avatarHair === 'orange'}
+                            checked={characterEdit.avatar_hair === 'orange'}
+                            onChange={(event) => {handleUpdate(event, 'CHANGE_HAIR')}}
+                        />
+                        <input 
+                            type='radio'
+                            name='hair'
+                            value='black'
+                            // checked={avatarHair === 'black'}
+                            checked={characterEdit.avatar_hair === 'black'}
+                            onChange={(event) => {handleUpdate(event, 'CHANGE_HAIR')}}
+                        />
+                    </div>
+                    {/* character body  selection */}
+                    <label>Character Body Color</label>    
+                    {/* <div className="radio-body">
+                        <input 
+                            type='radio'
+                            name='body'
+                            value='red'
+                            id='red'
+                            checked={avatarBody === 'red'}
+                            onChange={(event) => {setAvatarBody(event.target.value)}}
+                        />
+                        
+                        <input 
+                            type='radio'
+                            name='body'
+                            value='blue'
+                            id='blue'
+                            checked={avatarBody === 'blue'}
+                            onChange={(event) => {setAvatarBody(event.target.value)}}
+                        />
+                        <input 
+                            type='radio'
+                            name='body'
+                            value='orange'
+                            id='orange'
+                            checked={avatarBody === 'orange'}
+                            onChange={(event) => {setAvatarBody(event.target.value)}}
+                        />
+                        <input 
+                            type='radio'
+                            name='body'
+                            value='black'
+                            id='black'
+                            checked={avatarBody === 'black'}
+                            onChange={(event) => {setAvatarBody(event.target.value)}}
+                        />
+                    </div> */}
+                    {/* character pant color selection */}
+                    {/* <label>Character Pants Color</label>    
+                    <div className="radio-body">
+                        <input 
+                            type='radio'
+                            name='pant'
+                            value='red'
+                            id='red'
+                            checked={avatarPant === 'red'}
+                            onChange={(event) => {setAvatarPant(event.target.value)}}
+                        />
+                        
+                        <input 
+                            type='radio'
+                            name='pant'
+                            value='blue'
+                            id='blue'
+                            checked={avatarPant === 'blue'}
+                            onChange={(event) => {setAvatarPant(event.target.value)}}
+                        />
+                        <input 
+                            type='radio'
+                            name='pant'
+                            value='orange'
+                            id='orange'
+                            checked={avatarPant === 'orange'}
+                            onChange={(event) => {setAvatarPant(event.target.value)}}
+                        />
+                        <input 
+                            type='radio'
+                            name='pant'
+                            value='black'
+                            id='black'
+                            checked={avatarPant === 'black'}
+                            onChange={(event) => {setAvatarPant(event.target.value)}}
+                        />
+                    </div> */}
+                    {/* character feet color selection */}
+                    {/* <label>Character Feet Color</label>    
+                    <div className="radio-body">
+                        <input 
+                            type='radio'
+                            name='feet'
+                            value='red'
+                            id='red'
+                            checked={avatarFeet === 'red'}
+                            onChange={(event) => {setAvatarFeet(event.target.value)}}
+                        />
+                        
+                        <input 
+                            type='radio'
+                            name='feet'
+                            value='blue'
+                            id='blue'
+                            checked={avatarFeet === 'blue'}
+                            onChange={(event) => {setAvatarFeet(event.target.value)}}
+                        />
+                        <input 
+                            type='radio'
+                            name='feet'
+                            value='orange'
+                            id='orange'
+                            checked={avatarFeet === 'orange'}
+                            onChange={(event) => {setAvatarFeet(event.target.value)}}
+                        />
+                        <input 
+                            type='radio'
+                            name='feet'
+                            value='black'
+                            id='black'
+                            checked={avatarFeet === 'black'}
+                            onChange={(event) => {setAvatarFeet(event.target.value)}}
+                        />
+                    </div> */}
                     <button type='submit'>Final Edit</button>
                 </form>
             </section>

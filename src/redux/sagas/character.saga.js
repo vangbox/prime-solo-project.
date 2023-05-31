@@ -54,7 +54,7 @@ function* finalCharacterEdit(action){
   try {
 
     const finalEdit = action.payload;
-    // console.log("finalEdit*********", finalEdit);
+    console.log("finalEdit*********", finalEdit);
     const response = yield axios({
       method: 'PUT',
       url: `/api/character/${finalEdit.id}`,

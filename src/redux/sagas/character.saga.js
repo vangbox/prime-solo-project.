@@ -74,8 +74,8 @@ function* deleteCharacter(action){
     const deleteId = action.payload;
     const response = yield axios({
       method: 'DELETE',
-      url: `/api/character/${deleteId.id}`,
-      data: deleteId
+      url: `/api/character/${deleteId}`,
+      
     })
     yield put({
       type: 'FETCH_CHARACTER_CREATION'

@@ -83,7 +83,7 @@ router.put('/:id', (req, res) => {
   UPDATE "character_creation"
 	  SET "avatar_name" = $1
 		  WHERE "id" = $2;
-    `
+    `;
   // need to add userId, characterId
   const sqlValues = [newCharacterName, characterId];
 
@@ -97,5 +97,28 @@ router.put('/:id', (req, res) => {
   });
 })
 
+//DELETE ROUTE 
+router.delete('/:id', (req, res) => {
+  // endpoint functionality
+  // const userId = req.user.id;
+  const itemId = req.params.id;
+
+  //add userId below
+  const sqlValue = [itemId];
+
+  //AND user_id = $2
+  const queryText = `
+    DELETE FROM "character_creation" 
+    WHERE id = $1;
+  `;
+  
+  pool.query(queryText, sqlValue)
+    .then(() => res.sendStatus(201))
+    .catch((err) => {
+      console.log('ROUTER DELETE failed: ', err);
+      res.sendStatus(500);
+    });
+  
+});
 
 module.exports = router;

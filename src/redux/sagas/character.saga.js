@@ -69,11 +69,28 @@ function* finalCharacterEdit(action){
   }
 }
 
+function* deleteCharacter(action){
+  try {
+    const deleteId = action.payload;
+    const response = yield axios({
+      method: 'DELETE',
+      url: `/api/character/${deleteId.id}`,
+      data: deleteId
+    })
+    yield put({
+      type: 'FETCH_CHARACTER_CREATION'
+    })
+  } catch (error) {
+    console.log('deleteCharacter axios DELETE failed!!', error);
+  }
+}
+
   function* characters() {
     yield takeLatest('FETCH_CHARACTER_CREATION', fetchCharacterCreation);
-    yield takeLatest('CREATE_CHARACTER', postCreateCharacter)
-    yield takeLatest('FETCH_CHARACTER_EDIT', fetchCharacterEdit)
-    yield takeLatest('FINAL_CHARACTER_EDIT', finalCharacterEdit)
+    yield takeLatest('CREATE_CHARACTER', postCreateCharacter);
+    yield takeLatest('FETCH_CHARACTER_EDIT', fetchCharacterEdit);
+    yield takeLatest('FINAL_CHARACTER_EDIT', finalCharacterEdit);
+    yield takeLatest('DELETE_CHARACTER', deleteCharacter)
   }
   
   export default characters;

@@ -7,23 +7,13 @@ function CharacterEdit(){
     const params = useParams();
     const dispatch = useDispatch();
     const history = useHistory();
-    //local state for radio buttons
-    const [avatarName, setAvatarName] = useState('');
-    const [avatarHair, setAvatarHair] = useState('');
-    const [avatarBody, setAvatarBody] = useState('');
-    const [avatarPant, setAvatarPant] = useState('');
-    const [avatarFeet, setAvatarFeet] = useState('');
 
     const characterEdit = useSelector(store => store.characterEdit)
 
     useEffect(() => {
         const characterId = params.id;
         // console.log('characterId', characterId);
-        console.log('what is inside characterEdit', characterEdit);
-        console.log('what is inside characterEdit.avatar_hair', characterEdit.avatar_hair);
-        console.log('what is inside characterEdit.avatar_body', characterEdit.avatar_body);
-        console.log('what is inside characterEdit.avatar_pant', characterEdit.avatar_pant);
-        console.log('what is inside characterEdit.avatar_feet', characterEdit.avatar_feet);
+       
         dispatch({
             type: 'FETCH_CHARACTER_EDIT', 
             payload: characterId
@@ -40,9 +30,6 @@ function CharacterEdit(){
 
     const finalEditBtn = (event) => {
         event.preventDefault
-        
-        // console.log('what is inside characterEdit', characterEdit);
-        // console.log('what is inside characterEdit.avatar_hair', characterEdit.avatar_hair);
     
         dispatch({
             type: 'FINAL_CHARACTER_EDIT',
@@ -70,26 +57,21 @@ function CharacterEdit(){
                             type='radio'
                             name='hair'
                             value='red'
-                            // checked={avatarHair === 'red'}
                             checked={characterEdit.avatar_hair === 'red'}
                             onChange={(event) => {handleUpdate(event, 'CHANGE_HAIR')}}
-                            // onChange={handleUpdate}
                         />
                         
                         <input 
                             type='radio'
                             name='hair'
                             value='blue'
-                            // checked={avatarHair === 'blue'}
                             checked={characterEdit.avatar_hair === 'blue'}
                             onChange={(event) => {handleUpdate(event, 'CHANGE_HAIR')}}
-                            // onChange={handleUpdate}
                         />
                         <input 
                             type='radio'
                             name='hair'
                             value='orange'
-                            // checked={avatarHair === 'orange'}
                             checked={characterEdit.avatar_hair === 'orange'}
                             onChange={(event) => {handleUpdate(event, 'CHANGE_HAIR')}}
                         />
@@ -97,7 +79,6 @@ function CharacterEdit(){
                             type='radio'
                             name='hair'
                             value='black'
-                            // checked={avatarHair === 'black'}
                             checked={characterEdit.avatar_hair === 'black'}
                             onChange={(event) => {handleUpdate(event, 'CHANGE_HAIR')}}
                         />

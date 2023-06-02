@@ -38,5 +38,9 @@ label{
 
 #characterName{
     color: teal;
-    
+}
+
+.characterItem{
+    margin-left: 20px;
+    text-align: center;
 }

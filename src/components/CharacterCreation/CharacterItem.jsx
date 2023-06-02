@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {Link} from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 
-
+import './CharacterCreation.css'
 
 function CharacterItem(){
     
@@ -36,7 +36,7 @@ function CharacterItem(){
     
     return (
         // form for input for name and radio button for avatar skin 
-        <div>  
+        <div className ='characterItem'>  
         <form onSubmit={handleSubmit}>
             {/* input for user to type their name */}
             <div className="input">

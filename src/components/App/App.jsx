@@ -21,6 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import CharacterCreation from '../CharacterCreation/CharacterCreation';
 import CharacterEdit from '../CharacterCreation/CharacterEdit';
+import image from '../../img/wallpaperflare.com_wallpaper.jpg'
 
 import './App.css';
 
@@ -34,8 +35,10 @@ function App() {
   }, [dispatch]);
 
   return (
+    <div className='entranceBackground' style={{ backgroundImage:`url(${image})`}} >
     <Router>
       <div>
+        
         <Nav />
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
@@ -130,7 +133,7 @@ function App() {
         <Footer />
       </div>
     </Router>
-    
+    </div>
   );
 }
 

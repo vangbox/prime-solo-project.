@@ -12,20 +12,11 @@ function UserPage() {
 
   return (
     <div className="container">
-      <h2>Welcome, {user.username}!</h2>
-      <p>Your ID is: {user.id}</p>
-
-
+      <h2>Welcome, {user.username} to Devil's Cards!</h2>
       {/* button takes you to character creation page */}
-      
-      <CharacterItem />
-      
-      
+      <CharacterItem />    
       <LogOutButton className="btn" />
     </div>
-
-    
-
   );
 }
 

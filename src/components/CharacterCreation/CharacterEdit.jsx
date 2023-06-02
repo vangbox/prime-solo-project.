@@ -1,7 +1,8 @@
 import { useParams, useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
+//import css
+import './CharacterCreation.css';
 function CharacterEdit(){
 
     const params = useParams();

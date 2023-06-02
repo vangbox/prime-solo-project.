@@ -181,7 +181,7 @@ function CharacterItem(){
                 />
             </div>
             
-            <button type='submit'>NEXT</button>
+            <button className='btn' type='submit'>NEXT</button>
         </form>
         </div>
       );

@@ -1,0 +1,37 @@
+.card {
+    display : flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex: 1;
+    margin: .5em;
+    text-align: center;
+    justify-content: space-around;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+    padding: 2px 16px;
+    border-radius: 5px 5px 0 0;
+    border: gold;
+  }
+.singleCard{
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    justify-content: center;
+    border: 1px solid gold;
+    flex-basis: content;
+}
+
+h2{
+    color: gold;
+}
+
+h3{
+    color: gold;
+}
+label{
+    color: gold;
+}
+/* .container {
+    
+    min-height: 100vh;
+  } */

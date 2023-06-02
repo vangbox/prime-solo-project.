@@ -41,7 +41,7 @@ function CharacterEdit(){
     }
     // console.log('whats is characterEdit', characterEdit);
     return(
-        <div>
+        <div id="characterEdit">
         <h2>Edit Character</h2>
             <section>
                 <form onSubmit={finalEditBtn}>
@@ -52,7 +52,7 @@ function CharacterEdit(){
                             onChange={(event) => {handleUpdate(event, 'CHANGE_NAME')}}
                         />
                     </div>
-                    <label>Character Hair Color</label>    
+                    <h4>Character Hair Color</h4>    
                     <div className="radio-hair">
                         <input 
                             type='radio'
@@ -88,7 +88,7 @@ function CharacterEdit(){
                         <label>black</label>
                     </div>
                     {/* character body  selection */}
-                    <label>Character Body Color</label>    
+                    <h4>Character Body Color</h4>    
                     <div className="radio-body">
                         <input 
                             type='radio'
@@ -124,7 +124,7 @@ function CharacterEdit(){
                         <label>black</label>
                     </div> 
                     {/* character pant color selection */}
-                    <label>Character Pants Color</label>    
+                    <h4>Character Pants Color</h4>    
                     <div className="radio-body">
                         <input 
                             type='radio'
@@ -160,7 +160,7 @@ function CharacterEdit(){
                         <label>black</label>
                     </div>
                     {/* character feet color selection */}
-                    <label>Character Feet Color</label>    
+                    <h4>Character Feet Color</h4>    
                     <div className="radio-body">
                         <input 
                             type='radio'

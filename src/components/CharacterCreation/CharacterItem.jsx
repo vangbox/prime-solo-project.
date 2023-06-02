@@ -48,7 +48,7 @@ function CharacterItem(){
                 />
             </div>
             {/* character hair color selection */}
-            <label>Character Hair Color</label>    
+            <h4>Character Hair Color</h4>    
             <div className="radio-hair">
                 <input 
                     type='radio'
@@ -84,7 +84,7 @@ function CharacterItem(){
                 <label>black</label>
             </div>
             {/* character body  selection */}
-            <label>Character Body Color</label>    
+            <h4>Character Body Color</h4>    
             <div className="radio-body">
                 <input 
                     type='radio'
@@ -120,7 +120,7 @@ function CharacterItem(){
                 <label>black</label>
             </div>
             {/* character pant color selection */}
-            <label>Character Pants Color</label>    
+            <h4>Character Pants Color</h4>    
             <div className="radio-body">
                 <input 
                     type='radio'
@@ -156,7 +156,7 @@ function CharacterItem(){
                 <label>black</label>
             </div>
             {/* character feet color selection */}
-            <label>Character Feet Color</label>    
+            <h4>Character Feet Color</h4>    
             <div className="radio-body">
                 <input 
                     type='radio'

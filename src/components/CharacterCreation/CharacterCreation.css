@@ -22,11 +22,21 @@
 }
 
 h2{
-    color: gold;
+    text-decoration: underline;
+    text-align: center;
+    background: rgb(255,215,0);
+    background: linear-gradient(90deg, rgba(255,215,0,1) 38%, rgba(80,187,204,1) 51%, rgba(0,0,0,1) 70%);
+    background-clip: text;
+    color: transparent;
+
+
 }
 
 h3{
     color: blue;
+    text-decoration: underline;
+}
+h4{
     text-decoration: underline;
 }
 label{
@@ -61,3 +71,7 @@ label{
     cursor: pointer;
     margin: 10px;
   }
+
+#characterEdit{
+    text-align: center;
+}

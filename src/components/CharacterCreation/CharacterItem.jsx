@@ -57,7 +57,7 @@ function CharacterItem(){
                     checked={avatarHair === 'red'}
                     onChange={(event) => {setAvatarHair(event.target.value)}}
                 />
-                
+                <label>red</label>
                 <input 
                     type='radio'
                     name='hair'
@@ -65,14 +65,15 @@ function CharacterItem(){
                     checked={avatarHair === 'blue'}
                     onChange={(event) => {setAvatarHair(event.target.value)}}
                 />
+                <label>blue</label>
                 <input 
                     type='radio'
                     name='hair'
                     value='orange'
-
                     checked={avatarHair === 'orange'}
                     onChange={(event) => {setAvatarHair(event.target.value)}}
                 />
+                <label>orange</label>
                 <input 
                     type='radio'
                     name='hair'
@@ -80,6 +81,7 @@ function CharacterItem(){
                     checked={avatarHair === 'black'}
                     onChange={(event) => {setAvatarHair(event.target.value)}}
                 />
+                <label>black</label>
             </div>
             {/* character body  selection */}
             <label>Character Body Color</label>    
@@ -91,7 +93,7 @@ function CharacterItem(){
                     checked={avatarBody === 'red'}
                     onChange={(event) => {setAvatarBody(event.target.value)}}
                 />
-                
+                <label>red</label>
                 <input 
                     type='radio'
                     name='body'
@@ -99,6 +101,7 @@ function CharacterItem(){
                     checked={avatarBody === 'blue'}
                     onChange={(event) => {setAvatarBody(event.target.value)}}
                 />
+                <label>blue</label>
                 <input 
                     type='radio'
                     name='body'
@@ -106,6 +109,7 @@ function CharacterItem(){
                     checked={avatarBody === 'orange'}
                     onChange={(event) => {setAvatarBody(event.target.value)}}
                 />
+                <label>orange</label>
                 <input 
                     type='radio'
                     name='body'
@@ -113,6 +117,7 @@ function CharacterItem(){
                     checked={avatarBody === 'black'}
                     onChange={(event) => {setAvatarBody(event.target.value)}}
                 />
+                <label>black</label>
             </div>
             {/* character pant color selection */}
             <label>Character Pants Color</label>    
@@ -124,7 +129,7 @@ function CharacterItem(){
                     checked={avatarPant === 'red'}
                     onChange={(event) => {setAvatarPant(event.target.value)}}
                 />
-                
+                <label>red</label>
                 <input 
                     type='radio'
                     name='pant'
@@ -132,6 +137,7 @@ function CharacterItem(){
                     checked={avatarPant === 'blue'}
                     onChange={(event) => {setAvatarPant(event.target.value)}}
                 />
+                <label>blue</label>
                 <input 
                     type='radio'
                     name='pant'
@@ -139,6 +145,7 @@ function CharacterItem(){
                     checked={avatarPant === 'orange'}
                     onChange={(event) => {setAvatarPant(event.target.value)}}
                 />
+                <label>orange</label>
                 <input 
                     type='radio'
                     name='pant'
@@ -146,6 +153,7 @@ function CharacterItem(){
                     checked={avatarPant === 'black'}
                     onChange={(event) => {setAvatarPant(event.target.value)}}
                 />
+                <label>black</label>
             </div>
             {/* character feet color selection */}
             <label>Character Feet Color</label>    
@@ -157,7 +165,7 @@ function CharacterItem(){
                     checked={avatarFeet === 'red'}
                     onChange={(event) => {setAvatarFeet(event.target.value)}}
                 />
-                
+                <label>red</label>
                 <input 
                     type='radio'
                     name='feet'
@@ -165,6 +173,7 @@ function CharacterItem(){
                     checked={avatarFeet === 'blue'}
                     onChange={(event) => {setAvatarFeet(event.target.value)}}
                 />
+                <label>blue</label>
                 <input 
                     type='radio'
                     name='feet'
@@ -172,6 +181,7 @@ function CharacterItem(){
                     checked={avatarFeet === 'orange'}
                     onChange={(event) => {setAvatarFeet(event.target.value)}}
                 />
+                <label>orange</label>
                 <input 
                     type='radio'
                     name='feet'
@@ -179,6 +189,7 @@ function CharacterItem(){
                     checked={avatarFeet === 'black'}
                     onChange={(event) => {setAvatarFeet(event.target.value)}}
                 />
+                <label>black</label>
             </div>
             
             <button className='btn' type='submit'>NEXT</button>

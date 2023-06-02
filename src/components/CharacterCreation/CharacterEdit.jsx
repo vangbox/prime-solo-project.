@@ -61,7 +61,7 @@ function CharacterEdit(){
                             checked={characterEdit.avatar_hair === 'red'}
                             onChange={(event) => {handleUpdate(event, 'CHANGE_HAIR')}}
                         />
-                        
+                        <label>red</label>
                         <input 
                             type='radio'
                             name='hair'
@@ -69,6 +69,7 @@ function CharacterEdit(){
                             checked={characterEdit.avatar_hair === 'blue'}
                             onChange={(event) => {handleUpdate(event, 'CHANGE_HAIR')}}
                         />
+                        <label>blue</label>
                         <input 
                             type='radio'
                             name='hair'
@@ -76,6 +77,7 @@ function CharacterEdit(){
                             checked={characterEdit.avatar_hair === 'orange'}
                             onChange={(event) => {handleUpdate(event, 'CHANGE_HAIR')}}
                         />
+                        <label>orange</label>
                         <input 
                             type='radio'
                             name='hair'
@@ -83,6 +85,7 @@ function CharacterEdit(){
                             checked={characterEdit.avatar_hair === 'black'}
                             onChange={(event) => {handleUpdate(event, 'CHANGE_HAIR')}}
                         />
+                        <label>black</label>
                     </div>
                     {/* character body  selection */}
                     <label>Character Body Color</label>    
@@ -94,7 +97,7 @@ function CharacterEdit(){
                             checked={characterEdit.avatar_body === 'red'}
                             onChange={(event) => {handleUpdate(event, 'CHANGE_BODY')}}
                         />
-                        
+                        <label>red</label>
                         <input 
                             type='radio'
                             name='body'
@@ -102,6 +105,7 @@ function CharacterEdit(){
                             checked={characterEdit.avatar_body === 'blue'}
                             onChange={(event) => {handleUpdate(event, 'CHANGE_BODY')}}
                         />
+                        <label>blue</label>
                         <input 
                             type='radio'
                             name='body'
@@ -109,6 +113,7 @@ function CharacterEdit(){
                             checked={characterEdit.avatar_body === 'orange'}
                             onChange={(event) => {handleUpdate(event, 'CHANGE_BODY')}}
                         />
+                        <label>orange</label>
                         <input 
                             type='radio'
                             name='body'
@@ -116,6 +121,7 @@ function CharacterEdit(){
                             checked={characterEdit.avatar_body === 'black'}
                             onChange={(event) => {handleUpdate(event, 'CHANGE_BODY')}}
                         />
+                        <label>black</label>
                     </div> 
                     {/* character pant color selection */}
                     <label>Character Pants Color</label>    
@@ -127,7 +133,7 @@ function CharacterEdit(){
                             checked={characterEdit.avatar_pant === 'red'}
                             onChange={(event) => {handleUpdate(event, 'CHANGE_PANT')}}
                         />
-                        
+                        <label>red</label>
                         <input 
                             type='radio'
                             name='pant'
@@ -135,6 +141,7 @@ function CharacterEdit(){
                             checked={characterEdit.avatar_pant === 'blue'}
                             onChange={(event) => {handleUpdate(event, 'CHANGE_PANT')}}
                         />
+                        <label>blue</label>
                         <input 
                             type='radio'
                             name='pant'
@@ -142,6 +149,7 @@ function CharacterEdit(){
                             checked={characterEdit.avatar_pant === 'orange'}
                             onChange={(event) => {handleUpdate(event, 'CHANGE_PANT')}}
                         />
+                        <label>orange</label>
                         <input 
                             type='radio'
                             name='pant'
@@ -149,6 +157,7 @@ function CharacterEdit(){
                             checked={characterEdit.avatar_pant === 'black'}
                             onChange={(event) => {handleUpdate(event, 'CHANGE_PANT')}}
                         />
+                        <label>black</label>
                     </div>
                     {/* character feet color selection */}
                     <label>Character Feet Color</label>    
@@ -160,7 +169,7 @@ function CharacterEdit(){
                             checked={characterEdit.avatar_feet === 'red'}
                             onChange={(event) => {handleUpdate(event, 'CHANGE_FEET')}}
                         />
-                        
+                        <label>red</label>
                         <input 
                             type='radio'
                             name='feet'
@@ -168,6 +177,7 @@ function CharacterEdit(){
                             checked={characterEdit.avatar_feet === 'blue'}
                             onChange={(event) => {handleUpdate(event, 'CHANGE_FEET')}}
                         />
+                        <label>blue</label>
                         <input 
                             type='radio'
                             name='feet'
@@ -176,6 +186,7 @@ function CharacterEdit(){
                             checked={characterEdit.avatar_feet === 'orange'}
                             onChange={(event) => {handleUpdate(event, 'CHANGE_FEET')}}
                         />
+                        <label>orange</label>
                         <input 
                             type='radio'
                             name='feet'
@@ -184,8 +195,9 @@ function CharacterEdit(){
                             checked={characterEdit.avatar_feet === 'black'}
                             onChange={(event) => {handleUpdate(event, 'CHANGE_FEET')}}
                         />
+                        <label>black</label>
                     </div>
-                    <button type='submit'>Final Edit</button>
+                    <button className='btn' type='submit'>Final Edit</button>
                 </form>
             </section>
         </div>

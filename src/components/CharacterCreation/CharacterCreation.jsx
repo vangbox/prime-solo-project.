@@ -55,7 +55,7 @@ function CharacterCreation(){
                 {characterCreation.map(characterCreation => {
                     return (
                         <div className= 'singleCard' key={characterCreation.id}>
-                            <li>{characterCreation.avatar_name}</li>  
+                            <li id ='characterName'>{characterCreation.avatar_name}</li>  
                             <li>{characterCreation.avatar_hair}</li>
                             <li>{characterCreation.avatar_body}</li>
                             <li>{characterCreation.avatar_pant}</li>

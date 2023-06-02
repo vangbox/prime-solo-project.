@@ -40,7 +40,7 @@ function CharacterItem(){
         <form onSubmit={handleSubmit}>
             {/* input for user to type their name */}
             <div className="input">
-                <h3>Enter Your Character Name</h3>
+                <h3 className='title'>Enter Your Character Name</h3>
                 <input 
                     placeholder="Character Name" 
                     value={avatarName}

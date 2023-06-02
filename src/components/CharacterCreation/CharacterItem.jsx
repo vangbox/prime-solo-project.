@@ -42,7 +42,7 @@ function CharacterItem(){
             <div className="input">
                 <h3>Enter Your Character Name</h3>
                 <input 
-                    placeholder="name" 
+                    placeholder="Character Name" 
                     value={avatarName}
                     onChange={(event) => {setAvatarName(event.target.value)}}
                 />

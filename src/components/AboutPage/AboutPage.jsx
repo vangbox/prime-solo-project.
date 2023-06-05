@@ -9,7 +9,10 @@ function AboutPage() {
   return (
     <div className="container">
       <div>
-        <p>This about page is for anyone to read!</p>
+        <p>Thank You</p>
+        <p>Matt, Andrew, Chris for helping me out </p>
+        <p>Citrine Cohorts</p>
+        <p>What I used: React, JS, Redux, Saga, Reducer, Material UI</p>
       </div>
     </div>
   );

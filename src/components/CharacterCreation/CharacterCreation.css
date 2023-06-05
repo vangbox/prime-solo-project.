@@ -40,7 +40,7 @@ h4{
     text-decoration: underline;
 }
 label{
-    color: blue;
+    /* color: blue; */
     
     
 }
@@ -74,4 +74,20 @@ label{
 
 #characterEdit{
     text-align: center;
+}
+
+.red-label{
+    color: red;
+}
+
+.blue-label{
+    color: blue;
+}
+
+.orange-label{
+    color: orange;
+}
+
+.black-lable{
+    color: white;
 }

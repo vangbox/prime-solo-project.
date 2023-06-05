@@ -12,7 +12,7 @@ function AboutPage() {
         <p>Thank You</p>
         <p>Matt, Andrew, Chris,</p>
         <p>Citrine Cohorts and everyone else who helped me out!</p>
-        <p>What I used: React, JS, Nodes, Redux, Saga, Reducer, Material UI</p>
+        <p>What I used: React, JS, Nodes, Redux, Saga, Postgres, Postico, Material UI</p>
       </div>
     </div>
   );

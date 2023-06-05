@@ -10,8 +10,8 @@ function AboutPage() {
     <div className="container">
       <div>
         <p>Thank You</p>
-        <p>Matt, Andrew, Chris and Adam for helping me out!</p>
-        <p>Citrine Cohorts!</p>
+        <p>Matt, Andrew, Chris,</p>
+        <p>Citrine Cohorts and everyone else who helped me out!</p>
         <p>What I used: React, JS, Redux, Saga, Reducer, Material UI</p>
       </div>
     </div>
